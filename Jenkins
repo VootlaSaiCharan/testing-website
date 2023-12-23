@@ -4,7 +4,7 @@ pipeline{
         stage (clone){
             steps{
                 script{
-                    git ''
+                    git 'https://github.com/VootlaSaiCharan/testing-website.git'
                 }
             }
         }
