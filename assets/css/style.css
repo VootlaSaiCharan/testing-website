@@ -551,9 +551,11 @@ li {
     outline: 0
 }
 
+
+
 .section-padding40 {
-    padding-top: 100px;
-    padding-bottom: 100px
+    padding-top: 70px;
+    padding-bottom: 55px
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -2082,7 +2084,7 @@ li {
 }
 
 .services-area {
-    margin-top: -100px
+    margin-top: 0px
 }
 
 .services-area.services-area2 {
@@ -2095,6 +2097,7 @@ li {
     padding: 29px 24px;
     border-radius: 20px;
     background: #fff
+
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
