@@ -36,7 +36,7 @@ pipeline{
                 }
             }
         }
-        stage (Conatiner Running){
+        stage (Conatiner){
             steps{
                 script{
                     sh 'docker run -d --name website-test -p 80:80 vootlasaicharan/testing-image:v1'
