@@ -1,7 +1,7 @@
 pipeline{
     agent any
     stages{
-        stage (clone){
+        stage (Cone){
             steps{
                 script{
                     git 'https://github.com/VootlaSaiCharan/testing-website.git'
@@ -29,14 +29,14 @@ pipeline{
                 }
             }
         }
-        stage (pushing image){
+        stage (Pushing Image){
             steps{
                 script{
                     sh 'docker push vootlasaicharan/testing-image:v1'
                 }
             }
         }
-        stage (run the image){
+        stage (Conatiner){
             steps{
                 script{
                     sh 'docker run -d --name website-test -p 80:80 vootlasaicharan/testing-image:v1'
