@@ -29,7 +29,7 @@ pipeline{
                 }
             }
         }
-        stage (Pushing Image : Docker Hub){
+        stage (Pushing Image to Docker Hub){
             steps{
                 script{
                     sh 'docker push vootlasaicharan/testing-image:v1'
