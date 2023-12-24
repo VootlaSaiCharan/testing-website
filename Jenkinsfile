@@ -17,6 +17,7 @@ pipeline {
         }
         stage('pushing image'){
             steps {
+                sh 'docker login -u "vootlasaicharan" -p "charan@Akash.98" docker.io'
                 sh 'docker push vootlasaicharan/testing-image:v1'
             }
         }
