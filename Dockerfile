@@ -6,7 +6,7 @@ WORKDIR /app
 COPY . /app
 
 RUN apt update
-RUN apt install apache2
+RUN apt install apache2 -y
 
 ENV debian_frontend=non-interactive
 
