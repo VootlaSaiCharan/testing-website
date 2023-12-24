@@ -8,20 +8,6 @@ pipeline{
                 }
             }
         }
-        // stage (clean) {
-        //     steps{
-        //         script{
-        //             sh 'rm -rf /var/www/html/*'
-        //         }
-        //     }
-        // }
-        // stage (deploy) {
-        //     steps{
-        //         script{
-        //             sh 'mv * /var/www/html'
-        //         }
-        //     }
-        // }
         stage (Image) {
             steps{
                 script{
