@@ -16,4 +16,4 @@ EXPOSE 80
 
 VOLUME /var/apache/log/
 
-ADD ./* /var/www/html
+ADD ./* /var/www/html/
