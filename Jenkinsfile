@@ -22,7 +22,7 @@ pipeline{
         //         }
         //     }
         // }
-        stage (Image-Creation) {
+        stage (Image) {
             steps{
                 script{
                     sh 'docker build -t vootlasaicharan/testing-image:v1 .'
