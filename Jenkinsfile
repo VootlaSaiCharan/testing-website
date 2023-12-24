@@ -22,21 +22,21 @@ pipeline{
         //         }
         //     }
         // }
-        stage (Image Creation) {
+        stage (Image-Creation) {
             steps{
                 script{
                     sh 'docker build -t vootlasaicharan/testing-image:v1 .'
                 }
             }
         }
-        stage (Pushing Image){
+        stage (Pushing Image : Docker Hub){
             steps{
                 script{
                     sh 'docker push vootlasaicharan/testing-image:v1'
                 }
             }
         }
-        stage (Conatiner){
+        stage (Conatiner Running){
             steps{
                 script{
                     sh 'docker run -d --name website-test -p 80:80 vootlasaicharan/testing-image:v1'
