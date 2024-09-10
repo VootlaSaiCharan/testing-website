@@ -1,30 +1,16 @@
 pipeline {
     agent any
     stages {
-        stage('Checkout') {
+        stage('Clean') {
             steps {
                 script {
-                    // Checkout the code from your GitLab repository
-                    git 'https://github.com/VootlaSaiCharan/testing-website.git'
+                    sh 'rm -rf /var/www/html/*'
                 }
             }
         }
-        stage('Build Docker Image') {
+        stage('Deploy') {
             steps {
-                // Build Docker image with a version tag
-                sh 'docker build -t vootlasaicharan/testing-image:v1 .'
-            }
-        }
-        stage('pushing image'){
-            steps {
-                sh 'docker login -u "vootlasaicharan" -p "NULL" docker.io'
-                sh 'docker push vootlasaicharan/testing-image:v1'
-            }
-        }
-        stage('Create Container and run') {
-            steps {
-                // Run Docker container
-                sh 'docker run -d --name fwebsite -p 80:80 vootlasaicharan/testing-image:v1'
+                sh 'mv * /var/www/html/'
             }
         }
     }
