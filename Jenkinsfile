@@ -1,16 +1,21 @@
-pipeline {
-    agent any
-    stages {
-        stage('Clean') {
-            steps {
-                script {
-                    sh 'rm -rf /var/www/html/*'
-                }
+pipeline{
+    agentany
+    stages{
+        stage('git clone'){
+            steps{
+                git 'https://github.com/VootlaSaiCharan/testing-website.git'
+                sh  'cd testing-website'
+
             }
         }
-        stage('Deploy') {
-            steps {
-                sh 'mv * /var/www/html/'
+        stage('clean'){
+            steps{
+                sh 'rm -rf /var/www/html/*'
+            }
+        }
+        stage('deploy'){
+            steps{
+                sh 'cp -r testing-website/* /var/www/html/'
             }
         }
     }
