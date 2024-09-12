@@ -1,9 +1,9 @@
 pipeline{
-    agent any
+    agentany
     stages{
         stage('git clone'){
             steps{
-                sh 'git clone https://github.com/VootlaSaiCharan/testing-website.git'
+                git 'https://github.com/VootlaSaiCharan/testing-website.git'
             }
         }
         stage('clean'){
