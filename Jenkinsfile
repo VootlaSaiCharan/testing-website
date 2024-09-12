@@ -1,11 +1,9 @@
 pipeline{
-    agent any
+    agentany
     stages{
         stage('git clone'){
             steps{
-                git 'https://github.com/VootlaSaiCharan/testing-website.git'
-                sh  'cd testing-website'
-
+                sh 'git clone https://github.com/VootlaSaiCharan/testing-website.git'
             }
         }
         stage('clean'){
@@ -15,7 +13,7 @@ pipeline{
         }
         stage('deploy'){
             steps{
-                sh 'cp -r testing-website/* /var/www/html/'
+                sh 'cp -r * /var/www/html/'
             }
         }
     }
